@@ -37,45 +37,58 @@ latP <- data.frame(latP)
 rownames(latP) <-c("M20","F20","M50","F50")
 
 # Duration percentile
-rbind(
+DurP<-rbind(
   quantile(M20$Duration_negative, probs=seq(0.96,0.9,-0.01)),
   quantile(F20$Duration_negative, probs=seq(0.96,0.9,-0.01)),
   quantile(M50$Duration_negative, probs=seq(0.96,0.9,-0.01)),
   quantile(F50$Duration_negative, probs=seq(0.96,0.9,-0.01))
 )
+DurP <- data.frame(DurP)
+rownames(DurP) <-c("M20","F20","M50","F50")
 
 # Amplitude btp percentile
-rbind(
+AbtpP<-rbind(
   quantile(M20$`Amplitude_btp`, probs=seq(0.04,0.1,0.01)),
   quantile(F20$`Amplitude_btp`, probs=seq(0.04,0.1,0.01)),
   quantile(M50$`Amplitude_btp`, probs=seq(0.04,0.1,0.01)),
   quantile(F50$`Amplitude_btp`, probs=seq(0.04,0.1,0.01))
 )
+AbtpP <-data.frame(AbtpP)
+rownames(AbtpP) <-c("M20","F20","M50","F50")
+AbtpP
 
 # Amplitude ptp percentile
-rbind(
+AptpP<-rbind(
   quantile(M20$`Amplitude_ptp`, probs=seq(0.04,0.1,0.01)),
   quantile(F20$`Amplitude_ptp`, probs=seq(0.04,0.1,0.01)),
   quantile(M50$`Amplitude_ptp`, probs=seq(0.04,0.1,0.01)),
   quantile(F50$`Amplitude_ptp`, probs=seq(0.04,0.1,0.01))
 )
+AptpP <-data.fram(AptpP)
+rownames(AptpP) <-c("M20","F20","M50","F50")
+AptpP
 
 # Area percentile
-rbind(
+AreaP<-rbind(
   quantile(M20$Area_negative, probs=seq(0.04,0.1,0.01)),
   quantile(F20$`Area_negative`, probs=seq(0.04,0.1,0.01)),
   quantile(M50$`Area_negative`, probs=seq(0.04,0.1,0.01)),
   quantile(F50$`Area_negative`, probs=seq(0.04,0.1,0.01))
 )
+AreaP <-data.fram(AreaP)
+rownames(AreaP) <-c("M20","F20","M50","F50")
+AreaP
 
 # Conduction Velocity percentile
-rbind(
+CVP<-rbind(
   quantile(M20$Conduction_Velocity, probs=seq(0.04,0.1,0.01)),
   quantile(F20$Conduction_Velocity, probs=seq(0.04,0.1,0.01)),
   quantile(M50$Conduction_Velocity, probs=seq(0.04,0.1,0.01)),
   quantile(F50$Conduction_Velocity, probs=seq(0.04,0.1,0.01))
 )
-
+CVP <-data.fram(CVP)
+rownames(CVP) <-c("M20","F20","M50","F50")
+CVP
 
 
 # shapiro.test, hist, density graph
@@ -95,6 +108,8 @@ qqnorm(F50$Amplitude_btp)
 qqline(F50$Amplitude_btp)
 
 
+# git commit -am "msg"
+# git push - u origin master
 
 
 
